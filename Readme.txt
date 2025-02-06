@@ -1,48 +1,61 @@
-# CI/CD Pipeline with GitHub Actions
+# 🚀 CI/CD Pipeline with GitHub Actions
 
 This repository contains a **CI/CD pipeline** using GitHub Actions to automate the deployment of a **Node.js + Express** application with Docker.
 
-## Project Purpose
-This project is designed to automate the deployment process for a simple **RESTful API** built with Node.js and Express. The API provides basic functionalities such as:
-- **User authentication** (login/signup)
-- **CRUD operations** for managing a resource (e.g., tasks, products, or posts)
-- **Database integration** (MongoDB or PostgreSQL)
+---
+
+## 🎯 Project Purpose
+This project automates the deployment process for a simple **RESTful API** built with Node.js and Express. The API provides essential functionalities such as:
+
+| ✅ Feature              | 💡 Description |
+|------------------------|------------------------------|
+| 🔐 **User Authentication** | Login & Signup functionality |
+| ✍ **CRUD Operations** | Manage tasks, products, or posts |
+| 🗄 **Database Integration** | Supports MongoDB & PostgreSQL |
 
 The goal is to provide an **automated workflow** that builds, tests, and deploys the application to a server with minimal manual intervention.
 
-## Features
-- **Automated testing** using Jest
-- **Docker containerization** for the app
-- **Automatic build and push** to Docker Hub
-- **Deployment to a remote VPS** using SSH
+---
 
-## Prerequisites
+## ✨ Features
+| 🚀 Feature                  | 🔥 Description |
+|----------------------------|------------------------------|
+| 🛠 **Automated Testing** | Runs Jest tests automatically |
+| 📦 **Docker Containerization** | Packages the app in a Docker container |
+| 📤 **Automatic Build & Push** | Builds & pushes images to Docker Hub |
+| 🖥 **Deployment via SSH** | Deploys app to a remote VPS |
+
+---
+
+## ⚙️ Prerequisites
 Ensure you have the following set up before using this pipeline:
 
-1. **Docker Hub Account**: Store the Docker images.
-2. **GitHub Repository**: Add the provided workflow file.
-3. **VPS with Docker installed**: Ensure you have an accessible server.
-4. **GitHub Secrets Configuration**:
-   - `DOCKER_USERNAME`: Your Docker Hub username.
-   - `DOCKER_PASSWORD`: Your Docker Hub password.
-   - `SERVER_HOST`: The public IP or domain of your VPS.
-   - `SERVER_USER`: The SSH username for the VPS.
-   - `SERVER_SSH_KEY`: The private SSH key for deployment.
+1️⃣ **Docker Hub Account** – Store Docker images
+2️⃣ **GitHub Repository** – Add the provided workflow file
+3️⃣ **VPS with Docker Installed** – Ensure you have an accessible server
+4️⃣ **GitHub Secrets Configuration**:
+   - 🔑 `DOCKER_USERNAME`: Your Docker Hub username
+   - 🔑 `DOCKER_PASSWORD`: Your Docker Hub password
+   - 🌍 `SERVER_HOST`: Public IP or domain of VPS
+   - 👤 `SERVER_USER`: SSH username for VPS
+   - 🔑 `SERVER_SSH_KEY`: Private SSH key for deployment
 
-## Setup Instructions
-### 1. Clone the Repository
+---
+
+## 🛠 Setup Instructions
+### 1️⃣ Clone the Repository
 ```bash
  git clone https://github.com/yourusername/your-repo.git
  cd your-repo
 ```
 
-### 2. Create `.env` File (if needed)
+### 2️⃣ Create `.env` File (if needed)
 Define necessary environment variables inside `.env`.
 
-### 3. Create a `Dockerfile`
+### 3️⃣ Create a `Dockerfile`
 Ensure the repository contains a valid `Dockerfile` for containerizing the application.
 
-### 4. Configure GitHub Actions
+### 4️⃣ Configure GitHub Actions
 Create `.github/workflows/ci-cd.yml` with the following content:
 
 ```yaml
@@ -106,18 +119,28 @@ jobs:
             docker run -d --name node-app -p 3000:3000 ${{ secrets.DOCKER_USERNAME }}/node-app:latest
 ```
 
-## Deployment
+---
+
+## 🚀 Deployment Process
 Once you push changes to the `main` branch, GitHub Actions will:
-1. **Run tests** on the application.
-2. **Build a Docker image** and push it to Docker Hub.
-3. **Deploy the image** to your VPS via SSH.
 
-## Notes
-- Make sure to **configure GitHub secrets** before triggering the pipeline.
-- Ensure your VPS has **Docker installed and running**.
-- Modify **port settings** as per your application requirements.
+| 🚀 Step | 🎯 Description |
+|------------|------------------------------|
+| 🔍 **Run Tests** | Runs Jest tests on the application |
+| 🏗 **Build Image** | Creates a Docker image |
+| 📤 **Push Image** | Uploads image to Docker Hub |
+| 🌍 **Deploy App** | Deploys to remote VPS via SSH |
 
-## Author
-**Your Name**  
-GitHub: ErkanBarann(https://github.com/ErkanBarann)  
-Email:  baranerk49@gmail.com
+---
+
+## 📌 Notes
+- 🔑 Ensure GitHub secrets are configured before running the pipeline.
+- 🖥 Your VPS must have **Docker installed and running**.
+- ⚙️ Modify **port settings** as per your application requirements.
+
+---
+
+## 📢 Author
+👨‍💻 **Erkan Baran**  
+🔗 GitHub: [ErkanBarann](https://github.com/ErkanBarann)  
+📧 Email: [baranerk49@gmail.com](mailto:baranerk49@gmail.com)
